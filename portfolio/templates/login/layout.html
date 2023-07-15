@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <!-- layout.html -->
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'portfolio/css/layout.css' %}">
+    <script src="{% static 'portfolio/js/main.js' %}"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+</head>
+<body>
+<header>
+    <nav>
+        {% if user.is_authenticated %}
+
+            <div class="dropdown">
+                <button class="sobreMim">
+                    <a href="{% url 'portfolio:sobreMim' %}"><b>Projetos</b></a>
+                </button>
+                <div class="dropdown-content">
+                    <a href="{% url 'portfolio:listagem' %}">Listagem Projetos</a>
+                    <a href="{% url 'portfolio:criarProjeto' %}">Criar Projeto</a>
+                </div>
+            </div>
+            <div class="dropdown">
+                <button class="sobreMim">
+                    <a href=""><b>Imagens</b></a>
+                </button>
+                <div class="dropdown-content">
+                    <a href="{% url 'portfolio:listagemImagens' %}">Listagem Imagem</a>
+                    <a href="{% url 'portfolio:adicionarImagem' %}">Adicionar Imagem</a>
+                </div>
+            </div>
+            <button class="home">
+                <a href="{% url 'portfolio:home' %}" target="_blank">Preview Website</a>
+            </button>
+
+            <a href="{% url 'portfolio:logout' %}">Logout</a>
+
+            <a class="trigger-menu">
+                <span class="traco"></span>
+            </a>
+
+        {% endif %}
+    </nav>
+    {#    <div>Miguel Pinto</div>#}
+</header>
+<main>
+    {% block main %}
+    {% endblock main %}
+</main>
+<footer>ULusófona, 2023</footer>
+</body>
+</html>

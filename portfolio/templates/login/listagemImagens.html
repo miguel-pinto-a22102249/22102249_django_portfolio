@@ -1,0 +1,21 @@
+{% extends 'login/layout.html' %}
+{% load static %}
+
+{% block main %}
+    <table border="1px" class="table">
+        <tr>
+            <th>Titulo</th>
+            <th>Imagem</th>
+            <th>Opções</th>
+        </tr>
+        {% for imagem in imagens %}
+            <tr>
+                <td>{{ imagem.nome }}</td>
+                <td><img width="200px" src="{{ imagem.imagem.url }}"></td>
+
+                <td><a href="{% url "portfolio:editarImagem" imagem.id %}">Editar</a>
+                <a href="{% url "portfolio:eliminarImagem" imagem.id %}">Eliminar</a></td>
+            </tr>
+        {% endfor %}
+    </table>
+{% endblock %}

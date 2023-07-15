@@ -1,0 +1,16 @@
+<!-- home.html -->
+
+{% extends 'portfolio/layout.html' %}
+
+{% block main %}
+        <h1>Lista de Bandas</h1>
+
+        <div class="divBandas">
+            {% for banda in bandas %}
+                <div class="listaBandas">
+                    <h2>{{ banda.nome }}</h2>
+                    <p>{{ banda.estilo }}</p>
+                </div>
+            {% endfor %}
+        </div>
+{% endblock %}

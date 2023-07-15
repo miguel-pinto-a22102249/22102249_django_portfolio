@@ -5,19 +5,54 @@
     <title>Title</title>
 
     <!-- layout.html -->
-    ...
     {% load static %}
     <link rel="stylesheet" href="{% static 'portfolio/css/layout.css' %}">
+    <script src="{% static 'portfolio/js/main.js' %}"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
 </head>
 <body>
 <header>
-    <div>Miguel Pinto</div>
     <nav>
-        <a href="{% url 'portfolio:home' %}">home</a>
-        <a href="">products</a>
-        <a href="">about</a>
-        <a href="">contact</a>
+        <button class="home">
+            <a href="{% url 'portfolio:home' %}">Home</a>
+        </button>
+        <div class="dropdown">
+            <button class="sobreMim">
+                <a href="{% url 'portfolio:sobreMim' %}"><b>Sobre Mim</b></a>
+            </button>
+
+
+            <div class="dropdown-content">
+                    <a href="sobreMim.html" data-section="formacao">Estudos e Formações</a>
+                    <a href="sobreMim.html" data-section="experienciaProfissional">Experiência Profissional</a>
+                    <a href="sobreMim.html" data-section="motivacoes">Motivações</a>
+                    <a href="sobreMim.html" data-section="hobbies">Hobbies</a>
+            </div>
+        </div>
+        </button>
+        <button class="programacaoWeb">
+            <a href="{% url 'portfolio:programacaoWeb' %}"><b>Programação Web</b></a>
+        </button>
+        <button class="projetos">
+            <a href="{% url 'portfolio:projetos' %}">Projetos</a>
+        </button>
+        <button class="webScraping">
+            <a href="{% url 'portfolio:webScraping' %}"><b>Web Scraping</b></a>
+        </button>
+        <a class="trigger-menu">
+            <span class="traco"></span>
+        </a>
+        <button class="contactos">
+            <a href="{% url 'portfolio:contactos' %}"><b>Contactos</b></a>
+        </button>
+                <button class="banda">
+            <a href="{% url 'portfolio:banda' %}"><b>Bandas</b></a>
+        </button>
     </nav>
+    {#    <div>Miguel Pinto</div>#}
 </header>
 <main>
     {% block main %}

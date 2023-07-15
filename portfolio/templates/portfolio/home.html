@@ -3,10 +3,21 @@
 {% extends 'portfolio/layout.html' %}
 
 {% block main %}
-    <h3>Titulo</h3>
-    <p>texto texto texto texto texto texto texto </p>
+        {% load static %}
+        <div class="inicio">
+            <div id="textoimagem">
+                <div id="apresentacao">
+                    <h1 class="nome">Miguel Pinto</h1>
+                    <p class="introducao">
+                        Olá, este é o meu portfólio. Aqui falo um pouco sobre mim, das minhas experiências
+                        profissionais e dos projetos que desenvolvi. <br>
+                        Sou um entusiasta por tecnologia e pretendo continuar a desenvolver os meus conhecimentos nesta
+                        área. <br>
+                        Para qualquer dúvida contacta-me através da área de Contactos
+                    </p>
 
-
-    {% load static %}
-    <img src="{% static 'portfolio/images/logoLusofona.png' %}">
+                </div>
+                <img src="{% static 'portfolio/images/myself.jpg' %}" class="imagem" width="200px">
+            </div>
+        </div>
 {% endblock %}

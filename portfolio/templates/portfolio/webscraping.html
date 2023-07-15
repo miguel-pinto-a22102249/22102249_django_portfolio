@@ -1,0 +1,26 @@
+<!-- home.html -->
+
+{% extends 'portfolio/layout.html' %}
+
+{% block main %}
+    <div style="display: flex; align-items: center; justify-content: center; height: 89vh;">
+        <table style="width:700px; height:400px; border: 1px solid white; color: white" border="1px">
+            <thead>
+            <tr>
+                <th>Cidade</th>
+                <th>Data</th>
+                <th>Cº</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for dado in dados %}
+                <tr>
+                    <td>{{ dado.nome }}</td>
+                    <td>{{ dado.dataHora }}</td>
+                    <td>{{ dado.temperatura }}</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock %}

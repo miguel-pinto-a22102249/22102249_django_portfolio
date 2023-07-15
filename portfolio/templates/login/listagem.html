@@ -1,0 +1,21 @@
+{% extends 'login/layout.html' %}
+
+{% block main %}
+    <table border="1px" class="table">
+        <tr>
+            <th>Titulo</th>
+            <th>Descrição</th>
+            <th>Editar</th>
+            <th>Opções</th>
+        </tr>
+        {% for projeto in projetos %}
+            <tr>
+                <td>{{ projeto.titulo }}</td>
+                <td>{{ projeto.descricao }}</td>
+
+                <td><a href="{% url "portfolio:editarProjeto" projeto.id %}">Editar</a></td>
+                <td><a href="{% url "portfolio:eliminarProjeto" projeto.id %}">Eliminar</a></td>
+            </tr>
+        {% endfor %}
+    </table>
+{% endblock %}

@@ -1,0 +1,15 @@
+<!-- home.html -->
+
+{% extends 'portfolio/layout.html' %}
+
+{% block main %}
+    {% load static %}
+        <main>
+        <div id="redesSociais">
+            <a href="https://www.facebook.com/miguel.angelo.1695"><img src="{% static 'portfolio/images/facebook.png' %}" class="facebook"></a>
+            <a href="https://www.instagram.com/miguel16_angelo/"><img src="{% static 'portfolio/images/instagram.png' %}" class="instagram"></a>
+            <a href="https://www.linkedin.com/in/miguel-pinto-a95941268/"><img src="{% static 'portfolio/images/linkedin.png' %}" class="linkedin"></a>
+            <a href="mailto:miguelopes1995@gmail.com"><img src="{% static 'portfolio/images/gmail.png' %}" class="gmail"></a>
+        </div>
+    </main>
+{% endblock %}

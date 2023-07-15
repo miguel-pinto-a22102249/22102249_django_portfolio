@@ -1,0 +1,19 @@
+<!-- home.html -->
+
+{% extends 'portfolio/layout.html' %}
+
+{% block main %}
+    <h1>Projetos</h1>
+
+    <div class="wrapper-projetos">
+        {% for projeto in projetos %}
+            <div class="sitem">
+                <h2>{{ projeto.titulo }}</h2>
+                <img src="/imagens/{{ projeto.imagens.all.0.imagem.name }}">
+                <p>{{ projeto.descricao }}</p>
+                <span>{{ projeto.data }}</span>
+            </div>
+        {% endfor %}
+    </div>
+
+{% endblock %}

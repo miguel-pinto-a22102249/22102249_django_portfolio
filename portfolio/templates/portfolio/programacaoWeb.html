@@ -1,0 +1,47 @@
+<!-- home.html -->
+
+{% extends 'portfolio/layout.html' %}
+
+{% block main %}
+        <main>
+        <h2 class="h2">KeyFrame com Propriedade Transform</h2>
+        <div class="keyFrame">Key Frame</div>
+
+        <h2 class="h2">Iframe</h2>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/dEzOuI5yI84" title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen></iframe>
+
+
+
+        <section>
+            <div id="container" class="container-calculadora">
+                <input type="text" id="resultado" readonly>
+                <input type="button" value="7" onclick="inserir('7')">
+                <input type="button" value="8" onclick="inserir('8')">
+                <input type="button" value="9" onclick="inserir('9')">
+                <input type="button" value="/" onclick="inserir('/')">
+                <br>
+                <input type="button" value="4" onclick="inserir('4')">
+                <input type="button" value="5" onclick="inserir('5')">
+                <input type="button" value="6" onclick="inserir('6')">
+                <input type="button" value="*" onclick="inserir('*')">
+                <br>
+                <input type="button" value="1" onclick="inserir('1')">
+                <input type="button" value="2" onclick="inserir('2')">
+                <input type="button" value="3" onclick="inserir('3')">
+                <input type="button" value="-" onclick="inserir('-')">
+                <br>
+                <input type="button" value="0" onclick="inserir('0')">
+                <input type="button" value="." onclick="inserir('.')">
+                <input type="button" value="C" onclick="limpar()">
+                <input type="button" value="+" onclick="inserir('+')">
+                <br>
+                <input type="button" value="=" onclick="calcular()">
+            </div>
+
+        </section>
+    </main>
+
+{% endblock %}
